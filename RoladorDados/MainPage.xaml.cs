@@ -1,4 +1,6 @@
-﻿namespace RoladorDados
+﻿using RoladorDados.Models;
+
+namespace RoladorDados
 {
     public partial class MainPage : ContentPage
     {
@@ -23,11 +25,15 @@
 
         private void RolarDadoBtn_Clicked(object sender, EventArgs e)
         {
-            int n = Convert.ToInt32(QteLadosPck.SelectedItem);
+
+            /*int n = Convert.ToInt32(QteLadosPck.SelectedItem);
             int valor;
             Random rnd = new();
-            valor = rnd.Next(1, n + 1);
-            NumSorteadoLbl.Text = Convert.ToString(valor);
+            valor = rnd.Next(1, n + 1);*/
+            int n = Convert.ToInt32(QteLadosPck.SelectedItem);
+            Dado dado = new Dado(n);
+            dado.Rolar();
+            NumSorteadoLbl.Text = Convert.ToString(dado.LadoSorteado);
 
 
         }

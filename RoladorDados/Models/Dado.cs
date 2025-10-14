@@ -16,6 +16,8 @@ namespace RoladorDados.Models
             qteLados = lados;
         }
 
+        public int LadoSorteado { get => ladoSorteado; set => ladoSorteado = value; }
+
         public void Rolar()
         {
             ladoSorteado = Random.Shared.Next(1, qteLados + 1);
